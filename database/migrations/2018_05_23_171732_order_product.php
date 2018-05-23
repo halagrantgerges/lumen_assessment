@@ -13,7 +13,7 @@ class OrderProduct extends Migration
      */
     public function up()
     {
-         Schema::create('tag', function (Blueprint $table) {
+         Schema::create('order_product', function (Blueprint $table) {
             $table->integer('order_id'); 
             $table->integer('product_id');
             $table->integer('qnt');
@@ -27,6 +27,6 @@ class OrderProduct extends Migration
      */
     public function down()
     {
-         Schema::drop('tag');
+         Schema::drop('order_product');
     }
 }

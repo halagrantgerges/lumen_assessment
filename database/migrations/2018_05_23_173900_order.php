@@ -20,6 +20,8 @@ class Order extends Migration
             $table->string('payment_method');
             $table->float('discount_value');
             $table->float('total_payment_after_discount');
+            $table->timestamps();
+            
             /*
                   "email": "test@email.com",
       "total_amount_net": "1890.00",
@@ -40,3 +42,5 @@ class Order extends Migration
         Schema::drop('order');
     }
 }
+
+

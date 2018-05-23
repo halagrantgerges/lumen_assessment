@@ -6,21 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
-class Product extends Model
+class Order extends Model
 { 
-  
-    protected $table = 'Product';
-    protected $fillable = ['id' ,'name', 'category', 'subcategory','value','collection_id'];	 
+    protected $table = 'order';
+    protected $fillable = ['order_id' ,'email', 'total_amount_net', 'payment_method','discount_value','total_payment_after_discount'];	 
     public $timestamps = false;
-    public function collection()
-    {
-        return $this->belongsTo('App\Collection');
-    }
-    
-     public function productTag()
-    {
-        return $this->belongsToMany('App\ProductTag');
-    }
+
     
      public function productOrder()
     {
