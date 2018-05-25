@@ -14,7 +14,8 @@ namespace App;
  */
 class Collection {
    protected $table = 'Collection';
-
+   protected $fillable = ['id' ,'name'];	 
+  
     public function Product()
     {
         return $this->belongsToMany('App\Product');

@@ -36,6 +36,13 @@ class ProductController extends Controller
                 DB::table('product_tag')->insert(['product_id' => $product->id,'tag_id'=> $tagID]);
                
         }
+        
+        $collectionID = $request->input('collection_id');
+         $collection = DB::table('Collection')->where('id', $collectionID)->first();
+               if(!$collection) // the tag is not already inserted before then insert it
+             {  
+             DB::table('Collection')->insert(['id'=>$collectionID,'name' => "collection".$collectionID]);
+                 }
     	return response()->json($product);
  
     }
